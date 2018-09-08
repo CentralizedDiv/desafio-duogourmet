@@ -16,8 +16,7 @@ const styles = () => ( {
     display:  'flex',
     margin:  'auto',
     paddingTop: '50px',
-    maxWidth:'80%',
-    height:'200px'
+    maxWidth:'80%'
   },
   filter: {
     width:'80%',

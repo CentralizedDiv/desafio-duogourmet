@@ -27,6 +27,7 @@ class Restaurant extends Component {
           actions={
             [
               <ReactStars 
+                key={1}
                 className={classes.stars}
                 count={5}
                 value={4.5}
@@ -34,10 +35,10 @@ class Restaurant extends Component {
                 size={30}
                 color2={'#ffd700'} 
               />,
-              <p className={classes.starsRating}>4.5</p>,
-              <div className={classes.distance}>
+              <p key={2} className={classes.starsRating}>4.5</p>,
+              <div style={{display: restaurant.distance === undefined ? 'none': 'inline'}} key={3} className={classes.distance}>
                 <Icon className={classes.distanceIcon}>flag</Icon>
-                <p className={classes.distanceText}>145m</p>
+                <p className={classes.distanceText}>{restaurant.distance}</p>
               </div>
             ]
           }

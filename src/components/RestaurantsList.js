@@ -1,13 +1,18 @@
 import React, { Component } from 'react';
 import Restaurant from './Restaurant';
 import { Row } from 'react-materialize';
-import restaurants from '../storage/restaurants';
 
 class RestaurantsList extends Component {
-  returnRestaurants = () => {
-    return restaurants.map((r) => {
-      return <Restaurant restaurant={r} />
-    })
+  returnRestaurants = (restaurants) => {
+    return restaurants.map((r, index) => {
+      return <Restaurant key={index} restaurant={r} />
+    }).filter((r) => {
+      r = r.props.restaurant;
+      return r.name.toLowerCase().indexOf(this.props.filters.name.toLowerCase()) !== -1;
+    }).filter((r) => {
+      r = r.props.restaurant;
+      return r.culinary.toLowerCase().indexOf(this.props.filters.culinary.toLowerCase()) !== -1;
+    });
   }
   
   render() {
@@ -15,7 +20,7 @@ class RestaurantsList extends Component {
       <div>
           <Row>
             {
-              this.returnRestaurants()
+              this.returnRestaurants(this.props.restaurants)
             }
           </Row>
       </div>
