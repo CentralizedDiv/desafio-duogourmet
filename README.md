@@ -2,7 +2,7 @@
 
 ## Instruções para iniciar a aplicação
 ``` javascript
-npm instal
+npm install
 npm run start
 ```
 
