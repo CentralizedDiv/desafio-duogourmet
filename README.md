@@ -1,6 +1,8 @@
 # Desafio Duo Gourmet
 
-## Instruções
+## Instruções para iniciar a aplicação
 ``` javascript
-npm install
+npm instal
 npm run start
+
+Após isto, basta abrir o browser em http://localhost:3000
